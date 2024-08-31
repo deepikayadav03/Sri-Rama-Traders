@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Sri Rama Traders</title>
+    <style>
+        body {
+            background-image: url('https://coolbackgrounds.io/images/backgrounds/white/white-unsplash-9d0375d2.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header, .nav, .content, .footer {
+            text-align: center;
+        }
+        .nav a {
+            padding-right: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .intro {
+            font-size: 20px;
+            line-height: 30px;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+        .button {
+            font-size: 20px;
+            background-color: grey;
+            padding: 15px 35px;
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+        .button:hover {
+            background-color: darkgrey;
+        }
+        hr {
+            width: 40%;
+            margin: 20px auto;
+        }
+        .services {
+            margin: 20px 0;
+        }
+        .services img {
+            width: 80%; /* Make images larger */
+            height: auto;
+            margin: 20px 0; /* Add space between images */
+        }
+        .login-form {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .login-form input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        .login-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: grey;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: darkgrey;
+        }
+        .contact-link {
+            font-size: 20px;
+            color: blue;
+            text-decoration: none;
+        }
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        .location {
+            font-size: 18px;
+            color: black;
+            margin-bottom: 20px;
+        }
+        .location span {
+            color: blue; /* Location word in blue */
+        }
+        .store-prompt {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .map-container {
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="C:\Users\deepi\Downloads\sri rama traders.png" alt="Sri Rama Traders Logo">
+    </div>
+
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+    </div>
+
+    <div class="content">
+        <p class="intro">
+            Welcome to Sri Rama Traders! We provide high-quality materials for your construction needs. Our product range includes steel, cement, square boxes, and color sheets. We offer great quality products at Lower prices, with a focus on customer satisfaction and timely service. Let us help you build your dreams with confidence.
+        </p>
+        <p class="store-prompt">
+            Click here to see and order our menu items:
+        </p>
+        <a class="button" href="store.html">View Store</a>
+
+        <hr>
+
+        <p class="location"><span>Location:</span> Near G.P.R venture, Village Indrakaran, Mandal Kandi, Sangareddy District, Telangana State, India</p>
+
+        <div class="map-container">
+            <h2>Our Location</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.8846686015636!2d78.15099347442843!3d17.48308398796468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba5fa7b3fa64f%3A0x6b6143d43dbd9a64!2sG.P.R%20Venture%2C%20Indrakaran%2C%20Kandi%2C%20Sangareddy%20district%2C%20Telangana%2C%20India!5e0!3m2!1sen!2sus!4v1693495628367!5m2!1sen!2sus"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <h1 style="font-size: 20px; text-align: center;">OUR SERVICES AVAILABLE FROM 8AM TO 8PM EVERY DAY</h1>
+
+        <div class="services">
+            <img src="C:\deepika\altra tech image.jpg" alt="Service Image 1">
+            <img src="C:\deepika\steel.jpg" alt="Service Image 2">
+        </div>
+    </div>
+
+    <div class="login-form">
+        <h2>Login to Order</h2>
+        <form onsubmit="handleLogin(event)">
+            <input type="text" placeholder="Phone Number (10 digits)" id="phone" pattern="\d{10}" required>
+            <input type="text" placeholder="Address & Pincode" id="address" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>
+            For orders or any assistance, call us at 
+            <a href="tel:7207157488" class="contact-link">7207157488</a>.
+        </p>
+        <p>&copy; 2024 Sri Rama Traders. All rights reserved.</p>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+
+            // Validate phone number (must be 10 digits)
+            if (phone.length !== 10 || isNaN(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return;
+            }
+
+            // Store login state in local storage
+            localStorage.setItem('loggedIn', 'true');
+
+            // Redirect to store page
+            window.location.href = 'store.html';
+        }
+
+        // Check login state on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('loggedIn') === 'true') {
+                document.querySelector('.login-form').classList.add('hidden');
+                document.querySelector('.content').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
